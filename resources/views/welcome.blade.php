@@ -8,12 +8,12 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <title>Dona Creuza</title>
+    <title>Dona Creuzza</title>
 </head>
 <body>
     <header>
         <nav id="navbar">
-            <i class="fa-solid fa-bowl-food" id="nav_logo"> Dona Creuza</i>
+            <i class="fa-solid fa-bowl-food" id="nav_logo"> Dona Creuzza</i>
 
             <ul id="nav_list">
                 <li class="nav-item active">
@@ -57,11 +57,19 @@
 
     <main id="content">
         <section id="home">
-            <div class="shape"></div>
+            <div class="shape">
+                <div class="receita-gerada">
+                            @if(!empty($receita))
+                                <div class="">
+                                    {!! preg_replace("/\r\n|\n/", '<br>', $receita) !!}
+                                </div>
+                            @endif
+                        </div>
+            </div>
             <div id="cta">
                 <h1 class="title">
                     O sabor que você já
-                    <span>TEM NA CASA 🏡</span>
+                    <span>TEM EM CASA 🏡</span>
                 </h1>
 
                 <p class="description">
@@ -72,16 +80,16 @@
 
                 <div id="cta_buttons">
 
-                    <form method="post" action="{{ route('ingredientesAcao') }}">
-                        @csrf
-                        <label for="fname">Ingredientes</label><br>
-                        <input type="text" id="fname" name="ingredientes" value="{{$ingrdientes ?? ''}}"><br>
-                        <input type="submit" value="Gerar aqui" class="btn-default" style="margin-top: 4px;" />
-                    </form>
+                    <div class="container">
+                            <form class="container-form" method="post" action="{{ route('ingredientesAcao') }}">
+                                @csrf
+                                <label for="fname">Ingredientes:</label><br>
+                                <input type="text" id="fname" name="ingredientes" value="{{ $ingredientes ?? '' }}" style="margin-top: 8px;"><br>
+                                <input type="submit" value="Gerar aqui" class="btn-default" style="margin-top: 4px;" />
+                            </form>
 
-                    @if(!empty($receita))
-                        {!! preg_replace("/\r\n|\n/", '<br>', $receita) !!}
-                    @endif
+                        
+                    </div>
 
                 </div>
 
@@ -133,7 +141,7 @@
 
                     <div class="dish-price">
                         <button class="btn-default">
-                            <i class="">Acessar Receita</i>
+                            <a href="/receitas" style="text-decoration: none; color: black">Acessar Receita</a>
                         </button>
                     </div>
                 </div>
@@ -163,7 +171,7 @@
 
                     <div class="dish-price">
                         <button class="btn-default">
-                            <i class="">Acessar Receita</i>
+                            <a href="/receitas" style="text-decoration: none; color: black">Acessar Receita</a>
                         </button>
                     </div>
                 </div>
@@ -194,7 +202,7 @@
 
                     <div class="dish-price">
                         <button class="btn-default">
-                            <i class="">Acessar Receita</i>
+                            <a href="/receitas" style="text-decoration: none; color: black">Acessar Receita</a>
                         </button>
                     </div>
                 </div>
@@ -223,7 +231,7 @@
 
                     <div class="dish-price">
                         <button class="btn-default">
-                            <i class="">Acessar Receita</i>
+                            <a href="/receitas" style="text-decoration: none; color: black">Acessar Receita</a>
                         </button>
                     </div>
                 </div>
@@ -243,11 +251,11 @@
 
                 <div id="feedbacks">
                     <div class="feedback">
-                        <img src="{{ asset('ImagesPublic/avatar.png') }}" class="feedback-avatar" alt="">
+                        <img src="{{ asset('ImagesPublic/avatar-men.png') }}" class="feedback-avatar" alt="">
 
                         <div class="feedback-content">
                             <p>
-                                Gilberto Silvano
+                                Robert De Andrade
                                 <span>
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -268,7 +276,7 @@
 
                         <div class="feedback-content">
                             <p>
-                                Lucas Felipe
+                                Alexia Rosa
                                 <span>
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -285,7 +293,7 @@
                 </div>
 
                 <button class="btn-default">
-                    Se tornar Premium
+                    AVALIAR
                 </button>
             </div>
             <img src="{{ asset('ImagesPublic/chef.png') }}" class="testimonial_chef" alt="">

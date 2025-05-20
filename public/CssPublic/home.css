@@ -30,6 +30,34 @@
     gap: 24px;
 }
 
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.container>form{
+    width: 100%;
+}
+
+.right {
+    flex: 1;
+    padding: 20px;
+    background-color: #b5f5b5; /* cor verde clara igual a do fundo */
+    border-radius: 10px;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.resultado-receita {
+    text-align: left;
+    font-size: 18px;
+    color: #333;
+}
+
 #cta_buttons>form{
     width: 100%;
 }
@@ -89,6 +117,20 @@
     top: 0;
     right: 0;
     z-index: 1;
+    align-items: center;
+    align-content: center;
+    padding: 100px;
+}
+
+.receita-gerada{
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+
+.feedback-avatar{
+    width: 100px;
+    height: 100px;
 }
 
 @media screen and (max-width: 1170px) {

@@ -9,6 +9,14 @@ use PhpParser\Node\Stmt\Return_;
 
 class HomeController extends Controller
 {
+    public function receitas(): View {
+        return \view('receitas');
+    }
+
+    public function welcome(): View {
+        return \view('welcome');
+    }
+
     public function index(Request $r): View
     {
         return view('welcome');
@@ -34,18 +42,18 @@ class HomeController extends Controller
                             "Gere uma receita incrível sem adicionar mais nenhum item. ".
                             "SOMENTE com os seguintes ingredientes: " . $r->ingredientes . ". ".
                             "Importante: você não deve incluir ingredientes extras. ".
-                            'Se não conseguir gerar uma receita, responda: "Impossível, vai ao mercado!"'
+                            ''
                     ]
                 ],
 
-                'temperature' => 0.5,
-                'max-tokens' => 500
+                'temperature' => 0.9,
+                'max_tokens' => 500
             ]
         ]);
 
         if($response->getStatusCode() == 200){
             $data = json_decode($response->getBody(), true);
-            $viewData['receita'] = $data['choices'][0]['text'];
+            $viewData['receita'] = $data['choices'][0]['message']['content'] ?? 'Sem resposta';
             $viewData['ingredientes'] = $r->ingredientes;
             return view('welcome', $viewData);
         }else{
