@@ -28,7 +28,7 @@
             </ul>
 
             <button class="btn-default">
-                Sair
+                <a href="/login" style="text-decoration: none; color: black">Sair</a>
             </button>
 
             <button id="mobile_btn">
@@ -50,8 +50,9 @@
             </ul>
 
             <button class="btn-default">
-                Sair
+                <a href="/login" style="text-decoration: none; color: black">Sair</a>
             </button>
+
         </div>
     </header>
 
@@ -141,7 +142,7 @@
 
                     <div class="dish-price">
                         <button class="btn-default">
-                            <a href="/receitas" style="text-decoration: none; color: black">Acessar Receita</a>
+                            <a href="/receitas1" style="text-decoration: none; color: black">Acessar Receita</a>
                         </button>
                     </div>
                 </div>
@@ -171,7 +172,7 @@
 
                     <div class="dish-price">
                         <button class="btn-default">
-                            <a href="/receitas" style="text-decoration: none; color: black">Acessar Receita</a>
+                            <a href="/receitas2" style="text-decoration: none; color: black">Acessar Receita</a>
                         </button>
                     </div>
                 </div>
@@ -202,7 +203,7 @@
 
                     <div class="dish-price">
                         <button class="btn-default">
-                            <a href="/receitas" style="text-decoration: none; color: black">Acessar Receita</a>
+                            <a href="/receitas3" style="text-decoration: none; color: black">Acessar Receita</a>
                         </button>
                     </div>
                 </div>
@@ -231,7 +232,7 @@
 
                     <div class="dish-price">
                         <button class="btn-default">
-                            <a href="/receitas" style="text-decoration: none; color: black">Acessar Receita</a>
+                            <a href="/receitas4" style="text-decoration: none; color: black">Acessar Receita</a>
                         </button>
                     </div>
                 </div>

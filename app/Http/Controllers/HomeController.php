@@ -9,17 +9,33 @@ use PhpParser\Node\Stmt\Return_;
 
 class HomeController extends Controller
 {
-    public function receitas(): View {
-        return \view('receitas');
+    public function receitas1(): View {
+        return \view('receitas1');
+    }
+
+    public function receitas2(): View {
+        return \view('receitas2');
+    }
+
+    public function receitas3(): View {
+        return \view('receitas3');
+    }
+
+    public function receitas4(): View {
+        return \view('receitas4');
     }
 
     public function welcome(): View {
         return \view('welcome');
     }
 
+    public function login(): View {
+        return \view('login');
+    }
+
     public function index(Request $r): View
     {
-        return view('welcome');
+        return view('login');
     }
 
     public function ingredientesAcao(Request $r): View
