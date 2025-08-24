@@ -41,29 +41,30 @@ class HomeController extends Controller
     public function ingredientesAcao(Request $r): View
     {
         $client = new Client([
-            'base_uri' => 'https://api.openai.com/v1/',
+            'base_uri' => 'https://models.arcee.ai/v1/',
             'headers'=> [
-                'Content-Type' => 'application/json',
-                'Authorization' => 'Bearer ' . env('OPENAI_API_KEY')
+                
+                'Authorization' => 'Bearer ' . env('ARCEE_API_KEY'),
+                'Content-Type' => 'application/json'
             ]
         ]);
 
         $response = $client->post('chat/completions', [
             'json' => [
-                'model' => "gpt-3.5-turbo",
+                'model' => "auto",
                 'messages' => [
                     [
                         'role' => 'user',
                         'content' => 
-                            "Gere uma receita incrível sem adicionar mais nenhum item. ".
+                            "Gere uma receita incrível sem adicionar mais nenhum item. E no modo de preparo seja o mais breve".
                             "SOMENTE com os seguintes ingredientes: " . $r->ingredientes . ". ".
-                            "Importante: você não deve incluir ingredientes extras. ".
+                            "Importante: você não deve incluir ingredientes extras e faça isso de forma curta e a resposta deve ser em Pt-Br ".
                             ''
                     ]
                 ],
 
-                'temperature' => 0.9,
-                'max_tokens' => 500
+                'temperature' => 0.2,
+                'max_tokens' => 250
             ]
         ]);
 
